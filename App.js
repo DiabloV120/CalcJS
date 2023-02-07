@@ -6,14 +6,18 @@ let table = document.querySelector("#table");
 let total = document.querySelector("#total");
 
 function createCell(tr, value, name) {
-  add.addEventListener("click", function () {
-    let tr = document.createElement("tr");
-    createCell(tr, name.value, "name");
-    createCell(tr, price.value, "price");
-    createCell(tr, amount.value, "amount");
-    createCell(tr, price.value * amount.value, "cost");
-    createCell(tr, "удалить", "remove");
-    table.appendChild(tr);
-  });
+  td = document.createElement("td");
+  td.textContent = value.value;
+  td.classList.add(`${name.value}}`);
+  tr.appendChild(td);
 }
 
+add.addEventListener("click", function () {
+  let tr = document.createElement("tr");
+  createCell(tr, name.value, "name");
+  createCell(tr, price.value, "price");
+  createCell(tr, amount.value, "amount");
+  createCell(tr, price.value * amount.value, "cost");
+  createCell(tr, "удалить", "remove");
+  table.appendChild(tr);
+});
